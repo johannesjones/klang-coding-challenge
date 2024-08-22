@@ -100,12 +100,12 @@ The Incremental Static Regeneration page allows updating static pages after the 
 
 ### Random String API
 
-    - Endpoint: /api/random-string
-    - Method: GET
-    - Description: Generates a random string and returns it as a JSON response.
+- Endpoint: /api/random-string
+- Method: GET
+- Description: Generates a random string and returns it as a JSON response.
 
 Example response:
-```bash
+```code
 {
   "randomString": "f3p2ms"
 }
