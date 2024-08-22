@@ -1,5 +1,3 @@
-// src/app/static/__tests__/static.test.tsx
-
 import { render, screen } from "@testing-library/react";
 import StaticPage from "../app/staticp/page";
 
