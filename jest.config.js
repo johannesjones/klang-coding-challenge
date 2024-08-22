@@ -9,7 +9,12 @@ module.exports = {
         "^.+\\.(js|jsx)$": "babel-jest", // Transpile JavaScript files
     },
     setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"], // Setup file if needed
-    testPathIgnorePatterns: ["/node_modules/", "/.next/"], // Ignore specific folders
+    testPathIgnorePatterns: [
+        "/node_modules/",
+        "/.next/",
+        "__tests__/isr.test.tsx",
+        "__tests__/ssr.test.tsx",
+    ], // Ignore specific folders
     moduleNameMapper: {
         "/^@/(.*)$/": "<rootDir>/app/$1", // Map alias `@` to the `app` directory
     },

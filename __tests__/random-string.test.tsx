@@ -1,22 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import { http } from "msw";
-import { setupServer } from "msw/node";
 import RandomStringPage from "../app/random-string/page";
-
-// Mock server for intercepting network requests
-// const server = setupServer(
-//     http.get("../app/api/random-string", () => {
-//         return new Response(JSON.stringify({ randomString: "mockedString" }), {
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//         });
-//     })
-// );
-
-// beforeAll(() => server.listen());
-// afterEach(() => server.resetHandlers());
-// afterAll(() => server.close());
 
 // Mock the fetch function globally
 global.fetch = jest.fn(() =>
