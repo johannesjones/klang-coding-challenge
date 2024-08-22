@@ -1,4 +1,4 @@
-# Klang Coding Challenge
+# Klang Challenge
 
 This project is a Next.js application that demonstrates various rendering methods including Static Site Generation (SSG), Server-Side Rendering (SSR), and Incremental Static Regeneration (ISR). The project also includes an API route that generates a random string and a page that consumes it and displays the created string. Unit tests are in place for the API route plus the page that displays its returned value aswell as for the static page. It also contains a Cypress test suite for end-to-end testing for all pages and navigation except the random-string page (explained later), especially for the ISR and SSR pages, since they were hard to test with Jest due to their async nature by default (more on that later).
 
@@ -13,6 +13,7 @@ This project is a Next.js application that demonstrates various rendering method
   - [Incremental Static Regeneration (ISR)](#incremental-static-regeneration-isr)
 - [API Endpoints](#api-endpoints)
 - [Testing](#testing)
+- [Deployment](#deployment)
 - [Known Issues](#known-issues)
 
 ## Project Setup
@@ -130,6 +131,10 @@ npm run dev
 npx cypress open
 npx cypress run
 ```
+
+### Deployment
+
+The App is deployed on Vercel: https://klang-challenge.vercel.app/
 
 ### Known Issues
 
