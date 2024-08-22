@@ -53,9 +53,24 @@ To start the development server:
 
 ```bash
 npm run dev
+```
 
 This will start the Next.js development server on http://localhost:3000.
 
 ### Build
 
 To build the project for production:
+
+```bash
+npm run build
+```
+
+### Start
+
+To start the production server after building:
+
+```bash
+npm start
+```
+
+
