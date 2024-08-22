@@ -73,4 +73,6 @@ To start the production server after building:
 npm start
 ```
 
+## Project Structure
+
 
