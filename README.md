@@ -1,6 +1,6 @@
 # Klang Coding Challenge
 
-This project is a Next.js application that demonstrates various rendering methods including Static Generation (SSG), Server-Side Rendering (SSR), and Incremental Static Regeneration (ISR). The project also includes an API route that generates random strings and a page that consumes it and displays the content, unit tests for the API route, the pages that displays its returned value and the static page. It also contains a Cypress test suite for end-to-end testing for all pages and navigation, especially for the ISR and SSR pages, since they were hard to test with Jest due to their async nature by default (more on that later).
+This project is a Next.js application that demonstrates various rendering methods including Static Site Generation (SSG), Server-Side Rendering (SSR), and Incremental Static Regeneration (ISR). The project also includes an API route that generates a random string and a page that consumes it and displays the created string. Unit tests are in place for the API route plus the page that displays its returned value aswell as for the static page. It also contains a Cypress test suite for end-to-end testing for all pages and navigation except the random-string page (explained later), especially for the ISR and SSR pages, since they were hard to test with Jest due to their async nature by default (more on that later).
 
 ## Table of Contents
 
@@ -13,9 +13,7 @@ This project is a Next.js application that demonstrates various rendering method
   - [Incremental Static Regeneration (ISR)](#incremental-static-regeneration-isr)
 - [API Endpoints](#api-endpoints)
 - [Testing](#testing)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
+- [Known Issues](#known-issues)
 
 ## Project Setup
 
@@ -133,8 +131,6 @@ npx cypress open
 npx cypress run
 ```
 
-### Known Issues / Future Work
+### Known Issues
 
-As mentioned in the introduction, both sever-side rendered pages isr and ssr are covered with e2e tests as it was hard to test them with Jest due to their asynchronous nature. The official documentation recommends to use e2e tests for default SSR pages (as of Next.js 13 with the introduction of the App Router) instead, since they are quite new and not supported, yet. 
-
-This is something I'd need to get into in more depth in the future.
+As mentioned in the introduction, both sever-side rendered pages isr and ssr are covered with e2e tests (the e2e test for the random-string page wasn't working on GitHubActions only, that's why it's skipped) as it was hard to test them with Jest due to their asynchronous nature. (I left both failed unit tests in the repo though). The official documentation recommends the use of e2e tests for default SSR pages (as of Next.js 13 with the introduction of the App Router) instead, since they are quite new and not supported, yet.
