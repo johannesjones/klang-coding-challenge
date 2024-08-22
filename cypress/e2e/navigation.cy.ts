@@ -55,20 +55,20 @@ describe("Navigation and Rendering", () => {
     });
 
     // Test for navigating to the random-string page, verifying its content, and navigating back
-    // it("should navigate to the random-string page and back", () => {
-    //     cy.visit("/"); // Visit the homepage
-    //     cy.contains("Random String Page").click(); // Click on the link to the Random String Page
-    //     cy.wait(10); // Short wait to allow navigation to complete
-    //     cy.url().should("include", "/random-string"); // Check that the URL includes '/random-string'
-    //     cy.contains("This Page creates a random string").should("be.visible"); // Verify that the Random String Page title is visible
-    //     cy.contains("Loading...").should("be.visible"); // Verify that the loading message is visible
-    //     cy.intercept("GET", "/api/random-string").as("fetchRandomString"); // Intercept the API call to fetch the random string
-    //     cy.wait("@fetchRandomString", { timeout: 10000 }); // Wait for the API call to complete
-    //     cy.get("p")
-    //         .invoke("text")
-    //         .should("match", /^[a-zA-Z0-9]+$/); // Verify that the random string matches the expected pattern
-    //     cy.contains("Back to Home").click(); // Click on the 'Back to Home' link
-    //     cy.url().should("eq", `${Cypress.config().baseUrl}/`); // Verify that the URL is back to the homepage
-    //     cy.contains("Welcome to My Next.js App").should("be.visible"); // Ensure the homepage content is visible
-    // });
+    it.skip("should navigate to the random-string page and back", () => {
+         cy.visit("/"); // Visit the homepage
+         cy.contains("Random String Page").click(); // Click on the link to the Random String Page
+         cy.wait(10); // Short wait to allow navigation to complete
+         cy.url().should("include", "/random-string"); // Check that the URL includes '/random-string'
+         cy.contains("This Page creates a random string").should("be.visible"); // Verify that the Random String Page title is visible
+         cy.contains("Loading...").should("be.visible"); // Verify that the loading message is visible
+         cy.intercept("GET", "/api/random-string").as("fetchRandomString"); // Intercept the API call to fetch the random string
+         cy.wait("@fetchRandomString", { timeout: 10000 }); // Wait for the API call to complete
+         cy.get("p")
+             .invoke("text")
+             .should("match", /^[a-zA-Z0-9]+$/); // Verify that the random string matches the expected pattern
+         cy.contains("Back to Home").click(); // Click on the 'Back to Home' link
+         cy.url().should("eq", `${Cypress.config().baseUrl}/`); // Verify that the URL is back to the homepage
+         cy.contains("Welcome to My Next.js App").should("be.visible"); // Ensure the homepage content is visible
+     });
 });
