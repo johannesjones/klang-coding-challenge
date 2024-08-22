@@ -134,7 +134,7 @@ npx cypress run
 
 ### Deployment
 
-The App is deployed on Vercel: https://klang-challenge.vercel.app/
+The App is deployed on Vercel: https://klang-coding-challenge.vercel.app/
 
 ### Known Issues
 
