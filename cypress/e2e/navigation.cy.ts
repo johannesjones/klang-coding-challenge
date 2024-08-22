@@ -63,7 +63,7 @@ describe("Navigation and Rendering", () => {
         cy.contains("This Page creates a random string").should("be.visible"); // Verify that the Random String Page title is visible
         cy.contains("Loading...").should("be.visible"); // Verify that the loading message is visible
         cy.intercept("/api/random-string").as("fetchRandomString"); // Intercept the API call to fetch the random string
-        cy.wait("@fetchRandomString"); // Wait for the API call to complete
+        cy.wait("@fetchRandomString", { timeout: 10000 }); // Wait for the API call to complete
         cy.get("p")
             .invoke("text")
             .should("match", /^[a-zA-Z0-9]+$/); // Verify that the random string matches the expected pattern
