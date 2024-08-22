@@ -81,3 +81,32 @@ npm start
 - app/isr/: Incremental Static Regeneration (ISR) page.
 - app/api/random-string/route.ts: API route to generate random strings.
 - cypress/: Contains Cypress tests for end-to-end testing.
+
+## Rendering Methods
+
+### Static Generation (SSG)
+
+The Static Generation page is pre-rendered at build time. Ideal for content that doesn't change frequently. Located at app/static-page.
+
+### Server-Side Rendering (SSR)
+
+The Server-Side Rendering page is rendered on the server at request time. It fetches data dynamically on each request. Located at app/ssr.
+
+### Incremental Static Regeneration (ISR)
+
+The Incremental Static Regeneration page allows updating static pages after the site is built. It regenerates the page at runtime based on a specified revalidation time. Located at app/isr.
+
+## API Endpoints
+
+### Random String API
+
+    - Endpoint: /api/random-string
+    - Method: GET
+    - Description: Generates a random string and returns it as a JSON response.
+
+Example response:
+```bash
+{
+  "randomString": "f3p2ms"
+}
+```
