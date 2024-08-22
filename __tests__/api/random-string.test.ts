@@ -1,4 +1,6 @@
-
+/**
+ * @jest-environment node
+ */
 
 import { GET } from "../../app/api/random-string/route"; // Adjust path if necessary
 
