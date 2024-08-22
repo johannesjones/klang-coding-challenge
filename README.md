@@ -75,4 +75,9 @@ npm start
 
 ## Project Structure
 
-
+- app/: Contains the application's main pages and components.
+- app/static-page/: Static Generation (SSG) page.
+- app/ssr/: Server-Side Rendering (SSR) page.
+- app/isr/: Incremental Static Regeneration (ISR) page.
+- app/api/random-string/route.ts: API route to generate random strings.
+- cypress/: Contains Cypress tests for end-to-end testing.
