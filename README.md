@@ -1,6 +1,6 @@
 # Klang Coding Challenge
 
-This project is a Next.js application that demonstrates various rendering methods including Static Generation (SSG), Server-Side Rendering (SSR), and Incremental Static Regeneration (ISR). The project also includes an API route that generates random strings, and a Cypress test suite for end-to-end testing.
+This project is a Next.js application that demonstrates various rendering methods including Static Generation (SSG), Server-Side Rendering (SSR), and Incremental Static Regeneration (ISR). The project also includes an API route that generates random strings and a page that consumes it and displays the content, unit tests for the API route, the pages that displays its returned value and the static page. It also contains a Cypress test suite for end-to-end testing for all pages and navigation, especially for the ISR and SSR pages, since they were hard to test with Jest due to their async nature by default (more on that later).
 
 ## Table of Contents
 
@@ -75,11 +75,13 @@ npm start
 
 ## Project Structure
 
+- __test__ : Contains the tests for the api-route, the random-string page and the static page.
 - app/: Contains the application's main pages and components.
-- app/static-page/: Static Generation (SSG) page.
-- app/ssr/: Server-Side Rendering (SSR) page.
-- app/isr/: Incremental Static Regeneration (ISR) page.
 - app/api/random-string/route.ts: API route to generate random strings.
+- app/isr/page.tsx: Incremental Static Regeneration (ISR) page.
+- app/random-string/page.tsx: A page that consumes the api-route and displays a random string.
+- app/ssr/page.tsx: Server-Side Rendering (SSR) page.
+- app/staticp/page.tsx: Static Generation (SSG) page.
 - cypress/: Contains Cypress tests for end-to-end testing.
 
 ## Rendering Methods
@@ -110,3 +112,29 @@ Example response:
   "randomString": "f3p2ms"
 }
 ```
+
+### Testing
+- Unit-tests are written using Jest.
+- End-to-end tests are written using Cypress.
+
+## Running Tests
+
+To run the Unit-tests in Jest:
+
+```bash
+npm test
+```
+
+To run the Cypress tests:
+
+```bash
+npm run dev
+npx cypress open
+npx cypress run
+```
+
+### Known Issues / Future Work
+
+As mentioned in the introduction, both sever-side rendered pages isr and ssr are covered with e2e tests as it was hard to test them with Jest due to their asynchronous nature. The official documentation recommends to use e2e tests for default SSR pages (as of Next.js 13 with the introduction of the App Router) instead, since they are quite new and not supported, yet. 
+
+This is something I'd need to get into in more depth in the future.
