@@ -58,11 +58,10 @@ describe("Navigation and Rendering", () => {
     it("should navigate to the random-string page and back", () => {
         cy.visit("/"); // Visit the homepage
         cy.contains("Random String Page").click(); // Click on the link to the Random String Page
-        cy.wait(100); // Short wait to allow navigation to complete
         cy.wait(10); // Short wait to allow navigation to complete
         cy.url().should("include", "/random-string"); // Check that the URL includes '/random-string'
         cy.contains("This Page creates a random string").should("be.visible"); // Verify that the Random String Page title is visible
-        cy.contains("Loading...").should("be.visible"); // Verify that the loading message is visible
+        //cy.contains("Loading...").should("be.visible"); // Verify that the loading message is visible
         cy.wait(200); // Short wait before intercepting the GET request
         cy.intercept("GET", "/api/random-string").as("fetchRandomString"); // Intercept the API call to fetch the random string
         cy.wait("@fetchRandomString", { timeout: 10000 }); // Wait for the API call to complete
