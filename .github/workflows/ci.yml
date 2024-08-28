@@ -31,7 +31,7 @@ jobs:
         run: npm run build
 
       - name: Start Next.js server
-        run: npm start &
+        run: npm run dev &
         env:
           PORT: 3000
 
