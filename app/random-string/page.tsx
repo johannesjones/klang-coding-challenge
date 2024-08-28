@@ -8,7 +8,9 @@ export default function RandomStringPage() {
 
     useEffect(() => {
         async function fetchRandomString() {
-            const response = await fetch("/api/random-string");
+            const response = await fetch("/api/random-string", {
+                cache: "no-store",
+            });
             const data = await response.json();
             setRandomString(data.randomString);
         }
