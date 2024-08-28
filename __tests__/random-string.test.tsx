@@ -27,6 +27,8 @@ describe("RandomStringPage", () => {
 
         // Optionally, check if the fetch function was called as expected
         expect(fetch).toHaveBeenCalledTimes(1);
-        expect(fetch).toHaveBeenCalledWith("/api/random-string");
+        expect(fetch).toHaveBeenCalledWith("/api/random-string", {
+            cache: "no-store",
+        });
     });
 });
