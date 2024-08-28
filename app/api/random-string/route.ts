@@ -4,3 +4,5 @@ export async function GET() {
     const randomString = Math.random().toString(36).substring(7);
     return NextResponse.json({ randomString });
 }
+
+export const dynamic = "force-dynamic";
